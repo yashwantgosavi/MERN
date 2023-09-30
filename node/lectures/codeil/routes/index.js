@@ -9,10 +9,4 @@ router.get('/about', aboutController.about);
 router.get('/profile', usersController.profile);
 router.use('/users', require('./users'));
 
-<<<<<<< HEAD
-
-
-module.exports = router;    
-=======
 module.exports = router;
->>>>>>> e6908e58e88039ab6bc0c142bf8f49c654525c5d
