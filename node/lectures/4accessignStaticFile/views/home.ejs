@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title%></title>
+  </head>
+  <body>
+    <h1 id="page-heading">My contact List</h1>
+    <i class="fa-solid fa-address-book"></i>
+    <div>
+      <ul>
+        <% for (let i of contact_list){ %>
+        <li>
+          <p><%= i.name%></p>
+          <p><%= i.phone%></p>
+        </li>
+        <% }%>
+      </ul>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/b3348ae33f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

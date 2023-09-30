@@ -1,0 +1,10 @@
+what is web frameworks?
+what is database?
+what is server?
+explain the MVC? (Models, Views, controllers)
+what is middleware functions in node js?
+
+
+Q: what is major use of package.json?
+--> The package.json is back bone of the our node project. its stores the important metadata about the project, including its name, current version, license, author and description. it also contain the dependacies used in the project. 
+the package.json file is required before publishing to NPM. NPM Uses the file to install dependacies, run scripts, and identify the entry point to a package.

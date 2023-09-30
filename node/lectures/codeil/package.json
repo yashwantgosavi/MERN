@@ -1,0 +1,17 @@
+{
+  "name": "codeil",
+  "version": "1.0.0",
+  "description": "My todo list project setup",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yashwant gosavi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "ndoe": "^0.0.0"
+  }
+}
