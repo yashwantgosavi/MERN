@@ -18,3 +18,8 @@
 
 ## node_modules =========== npm install ejs
         
+
+
+## Creating Layouts
+creating layouts we need to use express layout. for installing express layouts terminal control is : npm install express-ejs-layouts
+
