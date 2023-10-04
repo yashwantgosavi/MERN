@@ -3,3 +3,9 @@ module.exports.home=function(req, res){
         title: 'home'
     });
 }
+
+// module.exports.signUp=function(req, res){
+//     return res.render('home', {
+//         title: 'sign-Up'
+//     });
+// }
