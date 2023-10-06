@@ -13,14 +13,14 @@ module.exports.about = function (req, res) {
 
   // render the sign up page
 module.exports.signUp = function (req, res) {
-  res.render("user_sign_up", {
+  return res.render("user_sign_up", {
     title: "Codeil | Sign Up",
   });
 };
 
 // render the sign in page
 module.exports.signIn = function (req, res) {
-  res.render("user_sign_in", {
+ return res.render("user_sign_in", {
     title: "Codeil | Sign In",
   });
 };
