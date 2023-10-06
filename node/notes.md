@@ -23,3 +23,6 @@
 ## Creating Layouts
 creating layouts we need to use express layout. for installing express layouts terminal control is : npm install express-ejs-layouts
 
+
+
+## localhost alternative : 127.0.0.1:27017
