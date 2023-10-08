@@ -22,19 +22,19 @@ module.exports.signIn = function (req, res) {
 
 // get the sign up data
 module.exports.create = async function (req, res) {
-  console.log('inside create function', req.body);
+  console.log("inside create function", req.body);
   if (req.body.password != req.body.confirm_password) {
-    console.log('inside inside if condition for password checking');
+    console.log("inside inside if condition for password checking");
     return res.redirect("back");
   }
 
   User.findOne({ email: req.body.email }, function (err, user) {
     if (err) {
       console.log("error in finding user in signing up", err);
-      return; 
+      return;
     }
     if (!user) {
-      console.log('creating user');
+      console.log("creating user");
       User.create(req.body, function (err, user) {
         if (err) {
           console.log("error in creating user while signing up");
@@ -42,13 +42,34 @@ module.exports.create = async function (req, res) {
         }
         return res.redirect("/users/sign-in");
       });
-    }
-    else{
-      console.log('user found');
-        return res.redirect('back');
+    } else {
+      console.log("user found");
+      return res.redirect("back");
     }
   });
 };
 
 // sign in and cerate a session for the user
-module.exports.createSession = function (req, res) {};
+module.exports.createSession = function (req, res) {
+  // find the user
+  User.findOne({ email: req.body.email }, function (req, res) {
+    if (err) {
+      console.log("error in finding user in signing in");
+      return;
+    }
+    // handle user found
+    if (User) {
+      // handle password which doesn't match
+      if(User.password != req.body.password){
+        return res.redirect('back');
+      }
+      // handle session creation
+      res.cookie('user_id', User.id);
+      return res.redirect('/users/profile');
+    } else {
+      // handle user not found
+
+      return res.redirect('back');
+    }
+  });
+};
