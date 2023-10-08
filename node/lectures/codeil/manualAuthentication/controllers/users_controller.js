@@ -50,9 +50,9 @@ module.exports.create = async function (req, res) {
 };
 
 // sign in and cerate a session for the user
-module.exports.createSession = function (req, res) {
+module.exports.createSession = async function (req, res) {
   // find the user
-  User.findOne({ email: req.body.email }, function (req, res) {
+  await User.findOne({ email: req.body.email }, function (req, res) {
     if (err) {
       console.log("error in finding user in signing in");
       return;
