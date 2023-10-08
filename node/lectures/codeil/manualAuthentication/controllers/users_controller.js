@@ -21,16 +21,20 @@ module.exports.signIn = function (req, res) {
 };
 
 // get the sign up data
-module.exports.create = function (req, res) {
+module.exports.create = async function (req, res) {
+  console.log('inside create function', req.body);
   if (req.body.password != req.body.confirm_password) {
+    console.log('inside inside if condition for password checking');
     return res.redirect("back");
   }
+
   User.findOne({ email: req.body.email }, function (err, user) {
     if (err) {
-      console.log("error in finding user in signing up");
+      console.log("error in finding user in signing up", err);
       return; 
     }
     if (!user) {
+      console.log('creating user');
       User.create(req.body, function (err, user) {
         if (err) {
           console.log("error in creating user while signing up");
@@ -40,6 +44,7 @@ module.exports.create = function (req, res) {
       });
     }
     else{
+      console.log('user found');
         return res.redirect('back');
     }
   });
