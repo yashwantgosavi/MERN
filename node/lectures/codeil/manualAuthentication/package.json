@@ -4,7 +4,7 @@
   "description": "My all social media web application",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -17,6 +17,8 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
-    "mongoose": "^5.13.20"
+    "express-session": "^1.17.3",
+    "mongoose": "^5.13.20",
+    "passport-local": "^1.0.0"
   }
 }
