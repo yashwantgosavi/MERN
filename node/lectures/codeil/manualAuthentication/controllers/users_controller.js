@@ -69,7 +69,7 @@ module.exports.createSession = async function (req, res) {
     } else {
       // handle user not found
 
-      return res.redirect('back');
+      return res.redirect('/');
     }
   });
 };
