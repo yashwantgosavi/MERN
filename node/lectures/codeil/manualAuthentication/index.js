@@ -3,11 +3,11 @@ const app = express();
 const port = 8000;
 const expressLayouts = require("express-ejs-layouts");
 const db = require("./config/mongoose");
+const session = require('express-session');
+const passport = require('passport');
 const cookieParser = require("cookie-parser");
 
 // used for session cookie
-const session = require("express-session");
-const passport = require("passport");
 const passportLocal = require("./config/passport-local-strategy");
 
 app.use(express.static("./assets"));
@@ -42,10 +42,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 app.listen(port, function (err) {
   if (err) {
     console.log(`Error in running the server: ${err}`);
   }
-
   console.log(`Server is running on port: ${port}`);
 });

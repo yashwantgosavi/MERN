@@ -2,12 +2,10 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("../models/user");
 // authentication using passport
-passport.use(
-  new LocalStrategy(
-    {
+passport.use( new LocalStrategy({
       usernamefield: "email",
     },
-    function (email, passport, done) {
+    function (email, password, done) {
       // find a user and establish the identity
       User.findOne({ email: email }, function (err, user) {
         if (err) {
@@ -24,7 +22,7 @@ passport.use(
   )
 );
 
-// serializing the user to decide which key is to be keet in the cookies
+// serializing the user to decide which key is to be kept in the cookies
 passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
@@ -40,3 +38,6 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
+
+
+module.export = passport;
